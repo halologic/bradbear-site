@@ -1,0 +1,303 @@
+/**
+ * BradBear Elegant — Custom Styles
+ * Blogxer-inspired editorial overrides for Twenty Twenty-Five
+ *
+ * @package BradBear_Elegant
+ * @since   1.0.0
+ */
+
+/* ═══════════════════════════════════════════
+   GLOBAL RESETS & BASE
+   ═══════════════════════════════════════════ */
+
+body {
+	background-color: #ffffff;
+	color: #333333;
+	font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══════════════════════════════════════════
+   STICKY HEADER
+   ═══════════════════════════════════════════ */
+
+.wp-block-template-part[data-area="header"] > .wp-block-group,
+header.wp-block-template-part > .wp-block-group {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background: #ffffff;
+	border-bottom: 1px solid #e5e5e5;
+	transition: box-shadow 0.2s ease;
+}
+
+.wp-block-template-part[data-area="header"].is-scrolled > .wp-block-group {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Hide the header border separator on scroll (the sticky border handles it) */
+.header-border {
+	opacity: 1;
+	transition: opacity 0.2s ease;
+}
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════ */
+
+.wp-block-navigation .wp-block-navigation-item a {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #646464;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.wp-block-navigation .wp-block-navigation-item a:hover {
+	color: #1a1a1a;
+}
+
+/* ═══════════════════════════════════════════
+   POST CARD IMAGES — HOVER OVERLAY
+   ═══════════════════════════════════════════ */
+
+.post-card .post-card-image,
+.post-card .wp-block-post-featured-image {
+	position: relative;
+	overflow: hidden;
+}
+
+.post-card .wp-block-post-featured-image img {
+	transition: transform 0.4s ease;
+}
+
+.post-card:hover .wp-block-post-featured-image img {
+	transform: scale(1.03);
+}
+
+.post-card .wp-block-post-featured-image a::after {
+	content: "Read More";
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.45);
+	color: #ffffff;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
+}
+
+.post-card:hover .wp-block-post-featured-image a::after {
+	opacity: 1;
+}
+
+/* ═══════════════════════════════════════════
+   POST CARD TITLES
+   ═══════════════════════════════════════════ */
+
+.post-card .wp-block-post-title a {
+	text-decoration: none;
+	color: #1a1a1a;
+	transition: color 0.2s ease;
+}
+
+.post-card .wp-block-post-title a:hover {
+	color: #646464;
+}
+
+/* ═══════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════ */
+
+.hero-section .hero-featured-image img,
+.hero-section .wp-block-post-featured-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.single-hero-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* ═══════════════════════════════════════════
+   POST CONTENT TYPOGRAPHY
+   ═══════════════════════════════════════════ */
+
+.wp-block-post-content p {
+	font-size: 16px;
+	line-height: 1.75;
+	color: #333333;
+}
+
+.wp-block-post-content h2,
+.wp-block-post-content h3,
+.wp-block-post-content h4 {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-weight: 700;
+	color: #1a1a1a;
+	margin-top: 40px;
+	margin-bottom: 16px;
+}
+
+.wp-block-post-content blockquote {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-style: italic;
+	font-size: 20px;
+	line-height: 1.5;
+	color: #333333;
+	border-left: 3px solid #1a1a1a;
+	padding-left: 24px;
+	margin: 40px 0;
+}
+
+.wp-block-post-content figcaption {
+	font-size: 13px;
+	color: #999999;
+	text-align: center;
+	margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════════
+   VIDEO EMBEDS
+   ═══════════════════════════════════════════ */
+
+.wp-block-embed.wp-embed-aspect-16-9 {
+	border-radius: 0;
+}
+
+.wp-block-embed .wp-block-embed__wrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+}
+
+.wp-block-embed .wp-block-embed__wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER OVERRIDES
+   ═══════════════════════════════════════════ */
+
+.footer-nav-list {
+	list-style: none;
+	padding-left: 0 !important;
+}
+
+.footer-nav-list a {
+	color: #999999;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.footer-nav-list a:hover {
+	color: #ffffff;
+}
+
+/* ═══════════════════════════════════════════
+   PAGINATION
+   ═══════════════════════════════════════════ */
+
+.wp-block-query-pagination {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+}
+
+.wp-block-query-pagination-numbers .page-numbers {
+	padding: 6px 12px;
+	color: #646464;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.wp-block-query-pagination-numbers .page-numbers.current,
+.wp-block-query-pagination-numbers .page-numbers:hover {
+	color: #1a1a1a;
+	font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — TABLET & MOBILE
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+	.post-grid-query .wp-block-post-template.is-layout-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.post-grid-query .wp-block-post-template.is-layout-grid {
+		grid-template-columns: 1fr;
+	}
+
+	/* Scale down hero heading on mobile */
+	.hero-post .wp-block-post-title,
+	.hero-section h1 {
+		font-size: 28px !important;
+	}
+
+	/* Remove hover overlay on touch devices */
+	.post-card .wp-block-post-featured-image a::after {
+		display: none;
+	}
+}
+
+/* ═══════════════════════════════════════════
+   GALLERY & IMAGE BLOCKS
+   ═══════════════════════════════════════════ */
+
+.wp-block-gallery {
+	gap: 16px;
+}
+
+.wp-block-image img {
+	border-radius: 0;
+}
+
+.wp-block-image.alignwide img,
+.wp-block-image.alignfull img {
+	width: 100%;
+}
+
+/* ═══════════════════════════════════════════
+   SEPARATOR / DIVIDER OVERRIDES
+   ═══════════════════════════════════════════ */
+
+.wp-block-separator {
+	border-top: 1px solid #e5e5e5;
+	opacity: 1;
+}
+
+/* ═══════════════════════════════════════════
+   CATEGORY / TAG LINK STYLING
+   ═══════════════════════════════════════════ */
+
+.wp-block-post-terms a {
+	color: #999999;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.wp-block-post-terms a:hover {
+	color: #1a1a1a;
+}
