@@ -1,0 +1,7 @@
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# User specific files
+Icon?
